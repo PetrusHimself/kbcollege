@@ -9,6 +9,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/tailwind.css" | relURL }}">
 
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,29 +17,3 @@
 <!-- GLightbox for gallery -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#000000',
-                    secondary: '#FFFFFF',
-                    lightblue: '#E6F2FF',
-                    darkblue: '#003366',
-                    skyblue: '#87CEEB',
-                },
-                fontFamily: {
-                    sans: ['Open Sans', 'Arial', 'sans-serif'],
-                },
-                animation: {
-                    'fade-in': 'fadeIn 0.5s ease-in',
-                    'fade-in-up': 'fadeInUp 0.5s ease-out',
-                    'zoom-in': 'zoomIn 0.3s ease-out',
-                }
-            }
-        }
-    }
-</script>
