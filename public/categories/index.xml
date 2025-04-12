@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Kobamelo College - Empowering Minds, Enriching Futures</title>
+    <link>https://petrushimself.github.io/kbcollege/categories/</link>
+    <description>Recent content in Categories on Kobamelo College - Empowering Minds, Enriching Futures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://petrushimself.github.io/kbcollege/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Child Development</title>
+      <link>https://petrushimself.github.io/kbcollege/categories/child-development/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://petrushimself.github.io/kbcollege/categories/child-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Education</title>
+      <link>https://petrushimself.github.io/kbcollege/categories/education/</link>
+      <pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://petrushimself.github.io/kbcollege/categories/education/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Safety</title>
+      <link>https://petrushimself.github.io/kbcollege/categories/safety/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://petrushimself.github.io/kbcollege/categories/safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Training</title>
+      <link>https://petrushimself.github.io/kbcollege/categories/training/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://petrushimself.github.io/kbcollege/categories/training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://petrushimself.github.io/kbcollege/categories/development/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://petrushimself.github.io/kbcollege/categories/development/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
