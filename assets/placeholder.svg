@@ -1,0 +1,14 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6F2FF" />
+      <stop offset="50%" stop-color="#87CEEB" />
+      <stop offset="100%" stop-color="#003366" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grad)" />
+  <rect x="200" y="100" width="400" height="200" fill="white" opacity="0.8" rx="20" ry="20" />
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#003366" font-weight="bold">KOBAMELO COLLEGE</text>
+  <text x="400" y="220" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#003366">Image Placeholder</text>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#003366">Empowering Minds, Enriching Futures</text>
+</svg>
