@@ -1,0 +1,82 @@
+{{ define "main" }}
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeIn">
+                <img src="{{ with .Params.thumbnail }}{{ . }}{{ else }}/assets/placeholder.svg{{ end }}" alt="{{ .Title }}" class="w-full h-64 object-cover object-center">
+                
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        {{ range .Params.categories }}
+                            <span class="inline-block bg-lightblue text-darkblue px-3 py-1 rounded-full text-sm">
+                                {{ . }}
+                            </span>
+                        {{ end }}
+                    </div>
+                    
+                    <h1 class="text-3xl font-bold text-darkblue mb-4">{{ .Title }}</h1>
+                    
+                    <div class="flex items-center text-gray-600 text-sm mb-6">
+                        <span>{{ .Date.Format "January 2, 2006" }}</span>
+                        {{ with .Params.author }}
+                            <span class="mx-2">•</span>
+                            <span>{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    
+                    <div class="blog-post prose prose-lg max-w-none">
+                        {{ .Content }}
+                    </div>
+                    
+                    {{ with .Params.tags }}
+                    <div class="mt-8 pt-4 border-t">
+                        <h3 class="text-lg font-bold text-darkblue mb-3">Tags</h3>
+                        <div class="flex flex-wrap gap-2">
+                            {{ range . }}
+                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block bg-lightblue text-darkblue px-3 py-1 rounded-full text-sm hover:bg-skyblue hover:text-white transition duration-300">
+                                #{{ . }}
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    
+                    <div class="mt-8">
+                        <a href="{{ .CurrentSection.RelPermalink }}" class="inline-block bg-darkblue text-white px-4 py-2 rounded-md hover:bg-skyblue transition duration-300">
+                            &larr; Back to Blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-darkblue mb-6">Related Posts</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    {{ $related := .Site.RegularPages.Related . | first 3 }}
+                    {{ with $related }}
+                        {{ range . }}
+                            <div class="bg-white rounded-lg overflow-hidden shadow-md card-hover">
+                                <img src="{{ with .Params.thumbnail }}{{ . }}{{ else }}/assets/placeholder.svg{{ end }}" alt="{{ .Title }}" class="w-full h-40 object-cover">
+                                <div class="p-4">
+                                    <h4 class="font-bold text-darkblue mb-2">
+                                        <a href="{{ .RelPermalink }}" class="hover:text-skyblue transition-colors duration-300">
+                                            {{ .Title }}
+                                        </a>
+                                    </h4>
+                                    <p class="text-gray-600 text-sm mb-2">{{ .Date.Format "Jan 2, 2006" }}</p>
+                                    <a href="{{ .RelPermalink }}" class="text-skyblue text-sm font-medium hover:underline">
+                                        Read Article
+                                    </a>
+                                </div>
+                            </div>
+                        {{ end }}
+                    {{ else }}
+                        <p class="text-gray-600">No related posts found.</p>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

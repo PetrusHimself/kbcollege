@@ -1,0 +1,53 @@
+<!-- Footer -->
+<footer class="bg-darkblue text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between mb-8">
+            <div class="mb-8 md:mb-0 md:w-1/4">
+                <h3 class="text-xl font-bold mb-4">Kobamelo College</h3>
+                <p class="mb-4">"Empowering Minds, Enriching Futures"</p>
+                <p>Established in 2023, Kobamelo College is committed to providing high-quality education and training programs.</p>
+            </div>
+            
+            <div class="mb-8 md:mb-0 md:w-1/4">
+                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL }}" class="hover:text-skyblue transition duration-300">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            
+            <div class="mb-8 md:mb-0 md:w-1/4">
+                <h4 class="text-lg font-bold mb-4">Courses</h4>
+                <ul class="space-y-2">
+                    <li><a href="{{ "/#courses" | relURL }}" class="hover:text-skyblue transition duration-300">Early Childhood Development</a></li>
+                    <li><a href="{{ "/#courses" | relURL }}" class="hover:text-skyblue transition duration-300">Safety Management</a></li>
+                    <li><a href="{{ "/#courses" | relURL }}" class="hover:text-skyblue transition duration-300">First Aid</a></li>
+                    <li><a href="{{ "/#courses" | relURL }}" class="hover:text-skyblue transition duration-300">Computer Literacy</a></li>
+                </ul>
+            </div>
+            
+            <div class="md:w-1/4">
+                <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                <p class="mb-2">{{ .Site.Params.address }}</p>
+                <p class="mb-2">Email: {{ .Site.Params.email }}</p>
+                <p class="mb-4">Phone: {{ .Site.Params.phone }}</p>
+                <div class="flex space-x-4">
+                    <a href="{{ .Site.Params.facebook }}" target="_blank" class="bg-white text-darkblue p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-skyblue transition duration-300">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-400 mb-4 md:mb-0">© {{ now.Format "2006" }} Kobamelo College. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-sm text-gray-400 hover:text-skyblue transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-sm text-gray-400 hover:text-skyblue transition duration-300">Terms & Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>

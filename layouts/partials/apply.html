@@ -1,0 +1,92 @@
+<!-- Apply Section -->
+<section id="apply" class="py-16 bg-gradient-to-r from-darkblue to-skyblue">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden animate__animated animate__zoomIn">
+            <div class="md:flex">
+                <div class="md:w-1/2 bg-darkblue text-white p-8 flex flex-col justify-center">
+                    <h2 class="text-2xl font-bold mb-4">Ready to Start Your Journey?</h2>
+                    <p class="mb-6">Join Kobamelo College and take the first step towards empowering your future. Our application process is simple and straightforward.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 w-5 h-5 text-skyblue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            <span class="ml-2">Submit your application form</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 w-5 h-5 text-skyblue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            <span class="ml-2">Provide required documents (ID, certificates)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 w-5 h-5 text-skyblue mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            <span class="ml-2">Pay the application fee</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-2">Application Deadlines</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between">
+                                <span>Early Childhood Development</span>
+                                <span>30 November 2024</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Safety Programs</span>
+                                <span>Rolling Admission</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Short Courses</span>
+                                <span>Monthly Intakes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <h3 class="text-xl font-bold text-darkblue mb-6">Start Your Application</h3>
+                    <p class="text-gray-700 mb-6">Complete this form to begin your application process, or click the button below to access our full online application portal.</p>
+                    
+                    <div class="text-center mb-6">
+                        <a href="{{ .Site.Params.applyUrl }}" target="_blank" class="inline-block bg-darkblue text-white px-6 py-3 rounded-md hover:bg-skyblue transition duration-300 pulse-animation">
+                            Apply Online Now
+                        </a>
+                    </div>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Full Name</label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skyblue" id="name" type="text" placeholder="Your full name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skyblue" id="email" type="email" placeholder="your@email.com">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone Number</label>
+                            <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skyblue" id="phone" type="tel" placeholder="078 123 4567">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="course">Course Interested In</label>
+                            <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-skyblue" id="course">
+                                <option>Select a course</option>
+                                <option>Early Childhood Development (NQF 4)</option>
+                                <option>Computer Literacy</option>
+                                <option>Safety Management</option>
+                                <option>First Aid</option>
+                                <option>Environmental Health and Safety</option>
+                                <option>H.I.R.A</option>
+                                <option>SHE Rep</option>
+                                <option>Basic Fire fighter</option>
+                                <option>HIV and Aids counselling</option>
+                            </select>
+                        </div>
+                        <button class="w-full bg-darkblue text-white py-2 px-4 rounded-md hover:bg-skyblue transition duration-300" type="submit">Request Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

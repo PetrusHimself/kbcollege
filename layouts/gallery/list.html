@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12 animate__animated animate__fadeIn">
+            <h1 class="text-3xl font-bold text-darkblue mb-4">{{ .Title }}</h1>
+            {{ with .Description }}
+                <p class="text-gray-700 max-w-2xl mx-auto">{{ . }}</p>
+            {{ end }}
+            <div class="w-20 h-1 bg-skyblue mx-auto mt-4"></div>
+        </div>
+
+        <div class="mx-auto max-w-6xl">
+            {{ .Content }}
+            
+            <div class="gallery-grid">
+                {{ range .Pages }}
+                    <div class="gallery-item animate__animated animate__fadeInUp">
+                        {{ with .Params.images }}
+                            {{ with index . 0 }}
+                                <a href="{{ .RelPermalink }}" class="block overflow-hidden">
+                                    <img src="{{ .src }}" alt="{{ .caption }}" class="gallery-image">
+                                    <div class="gallery-caption">
+                                        <h3 class="font-bold text-darkblue text-lg">{{ $.Title }}</h3>
+                                        <p class="text-gray-600 text-sm">{{ $.Date.Format "January 2006" }}</p>
+                                    </div>
+                                </a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

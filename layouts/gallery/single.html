@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-6xl">
+            <div class="mb-8">
+                <a href="{{ .CurrentSection.RelPermalink }}" class="inline-block bg-darkblue text-white px-4 py-2 rounded-md hover:bg-skyblue transition duration-300">
+                    &larr; Back to Gallery
+                </a>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-8 animate__animated animate__fadeIn">
+                <h1 class="text-3xl font-bold text-darkblue mb-4">{{ .Title }}</h1>
+                <p class="text-gray-600 mb-8">{{ .Date.Format "January 2006" }}</p>
+                
+                <div class="prose prose-lg max-w-none mb-8">
+                    {{ .Content }}
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    {{ range .Params.images }}
+                        <div class="gallery-item">
+                            <a href="{{ .src }}" class="gallery-lightbox" data-gallery="gallery-{{ $.File.UniqueID }}">
+                                <img src="{{ .src }}" alt="{{ .caption }}" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-full">
+                                <div class="mt-2">
+                                    <h4 class="font-bold text-darkblue">{{ .caption }}</h4>
+                                    <p class="text-gray-600 text-sm">{{ .description }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,83 @@
+{{ define "main" }}
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12 animate__animated animate__fadeIn">
+            <h1 class="text-3xl font-bold text-darkblue mb-4">{{ .Title }}</h1>
+            {{ with .Description }}
+                <p class="text-gray-700 max-w-2xl mx-auto">{{ . }}</p>
+            {{ end }}
+            <div class="w-20 h-1 bg-skyblue mx-auto mt-4"></div>
+        </div>
+
+        <div class="mx-auto max-w-6xl">
+            {{ .Content }}
+            
+            {{ $paginator := .Paginate (where .Pages "Type" "blog") }}
+            <div class="blog-grid">
+                {{ range $paginator.Pages }}
+                    <article class="blog-card animate__animated animate__fadeInUp">
+                        <img src="{{ with .Params.thumbnail }}{{ . }}{{ else }}/assets/placeholder.svg{{ end }}" alt="{{ .Title }}" class="blog-thumbnail">
+                        <div class="blog-content">
+                            <div class="blog-meta">{{ .Date.Format "January 2, 2006" }}</div>
+                            <h2 class="blog-title">
+                                <a href="{{ .RelPermalink }}" class="hover:text-skyblue transition-colors duration-300">
+                                    {{ .Title }}
+                                </a>
+                            </h2>
+                            <div class="blog-excerpt">{{ .Summary }}</div>
+                            <div class="blog-tags">
+                                {{ range .Params.categories }}
+                                    <span class="blog-tag">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                            <div class="mt-4">
+                                <a href="{{ .RelPermalink }}" class="text-skyblue font-medium hover:underline">
+                                    Read More &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                {{ end }}
+            </div>
+            
+            {{ if gt $paginator.TotalPages 1 }}
+            <div class="mt-10 flex justify-center">
+                <div class="inline-flex">
+                    {{ if $paginator.HasPrev }}
+                        <a href="{{ $paginator.Prev.URL }}" class="bg-darkblue text-white px-4 py-2 rounded-l-md hover:bg-skyblue transition duration-300">
+                            &laquo; Previous
+                        </a>
+                    {{ else }}
+                        <span class="bg-gray-300 text-gray-500 px-4 py-2 rounded-l-md cursor-not-allowed">
+                            &laquo; Previous
+                        </span>
+                    {{ end }}
+                    
+                    {{ range $paginator.Pagers }}
+                        {{ if eq . $paginator }}
+                            <span class="bg-skyblue text-white px-4 py-2">
+                                {{ .PageNumber }}
+                            </span>
+                        {{ else }}
+                            <a href="{{ .URL }}" class="bg-white text-darkblue px-4 py-2 hover:bg-lightblue transition duration-300">
+                                {{ .PageNumber }}
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                    
+                    {{ if $paginator.HasNext }}
+                        <a href="{{ $paginator.Next.URL }}" class="bg-darkblue text-white px-4 py-2 rounded-r-md hover:bg-skyblue transition duration-300">
+                            Next &raquo;
+                        </a>
+                    {{ else }}
+                        <span class="bg-gray-300 text-gray-500 px-4 py-2 rounded-r-md cursor-not-allowed">
+                            Next &raquo;
+                        </span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

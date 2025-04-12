@@ -1,0 +1,40 @@
+<!-- Navigation -->
+<nav class="bg-white nav-shadow fixed w-full z-10">
+    <div class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="{{ .Site.BaseURL }}" class="text-2xl font-bold text-primary">KOBA<span class="text-darkblue">MELO</span> COLLEGE</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                {{ range .Site.Menus.main }}
+                    {{ if .URL }}
+                        {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+                        {{ $isHome := eq .URL "/" }}
+                        {{ $isURL := and (not $isHome) (in $.RelPermalink .URL) }}
+                        <a href="{{ .URL }}" class="{{ if or $active $isURL }}text-darkblue{{ else }}text-gray-700{{ end }} font-medium hover:text-skyblue transition-colors duration-300">{{ .Name }}</a>
+                    {{ end }}
+                {{ end }}
+                <a href="{{ .Site.Params.applyUrl }}" target="_blank" class="bg-darkblue text-white px-4 py-2 rounded-md hover:bg-skyblue transition duration-300 pulse-animation">Apply Now</a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu hidden md:hidden bg-white py-4 px-6">
+        {{ range .Site.Menus.main }}
+            {{ if .URL }}
+                {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+                {{ $isHome := eq .URL "/" }}
+                {{ $isURL := and (not $isHome) (in $.RelPermalink .URL) }}
+                <a href="{{ .URL }}" class="block py-2 {{ if or $active $isURL }}text-skyblue{{ else }}text-gray-700{{ end }} hover:text-skyblue transition-colors duration-300">{{ .Name }}</a>
+            {{ end }}
+        {{ end }}
+        <a href="{{ .Site.Params.applyUrl }}" target="_blank" class="block mt-2 bg-darkblue text-white px-4 py-2 rounded-md text-center hover:bg-skyblue transition duration-300">Apply Now</a>
+    </div>
+</nav>

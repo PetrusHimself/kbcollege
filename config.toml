@@ -1,0 +1,47 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Kobamelo College - Empowering Minds, Enriching Futures"
+enableEmoji = true
+summaryLength = 20
+
+# For GitHub Pages deployment
+publishDir = "public"
+
+[params]
+  description = "Kobamelo College provides high-quality education and training programs that prepare students for success in their chosen careers."
+  author = "Kobamelo College"
+  phone = "073 747 5150 or 078 990 3012"
+  email = "kobamelocollege@gmail.com"
+  address = "2283 Extension 10 Tswelelang Location, Wolmaransstad, 2630"
+  facebook = "https://facebook.com/kobamelocollege"
+  applyUrl = "https://forms.gle/example"
+  
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/#about"
+    weight = 2
+  [[menu.main]]
+    name = "Courses"
+    url = "/#courses"
+    weight = 3
+  [[menu.main]]
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 4
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 5
+  [[menu.main]]
+    name = "Testimonials"
+    url = "/#testimonials"
+    weight = 6
+  [[menu.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 7

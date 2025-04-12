@@ -1,0 +1,40 @@
+{{ define "main" }}
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl">
+            <div class="bg-white rounded-lg shadow-md p-8 animate__animated animate__fadeIn">
+                <h1 class="text-3xl font-bold text-darkblue mb-4">{{ .Title }}</h1>
+                <div class="flex items-center text-gray-600 text-sm mb-6">
+                    <span>{{ .Date.Format "January 2, 2006" }}</span>
+                    {{ with .Params.author }}
+                        <span class="mx-2">•</span>
+                        <span>{{ . }}</span>
+                    {{ end }}
+                </div>
+                
+                <div class="prose prose-lg max-w-none">
+                    {{ .Content }}
+                </div>
+                
+                {{ with .Params.tags }}
+                <div class="mt-8 pt-4 border-t">
+                    <div class="flex flex-wrap gap-2">
+                        {{ range . }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block bg-lightblue text-darkblue px-3 py-1 rounded-full text-sm hover:bg-skyblue hover:text-white transition duration-300">
+                            #{{ . }}
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                
+                <div class="mt-8">
+                    <a href="{{ .CurrentSection.RelPermalink }}" class="inline-block bg-darkblue text-white px-4 py-2 rounded-md hover:bg-skyblue transition duration-300">
+                        &larr; Back to {{ .CurrentSection.Title }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
